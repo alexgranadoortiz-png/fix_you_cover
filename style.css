@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+body {
+  background: #000;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor principal */
+.container {
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+/* Tocadiscos */
+.turntable {
+  position: relative;
+  width: 720px;
+  max-width: 95vw;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Imagen del tocadiscos */
+.turntable::before {
+  content: "";
+  display: block;
+  width: 100%;
+  aspect-ratio: 720 / 404;
+  background: url("tocadiscos.jpg") center / contain no-repeat;
+}
+
+/* Vinilo personalizado */
+.vinyl {
+  position: absolute;
+
+  /* tamaño relativo al tocadiscos */
+  width: 70%;
+
+  top: 48%;
+  left: 49.5%;
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+}
+
+/* Giro */
+.spin {
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Botón */
+button {
+  position: absolute;
+  top: 19%;
+  left: 21%;
+  transform: translate(-50%, -50%);
+
+  font-size: 1.5rem;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+
+  width: 8%;
+  aspect-ratio: 1 / 1;
+
+  cursor: pointer;
+}
+
+button:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+/* Descarga */
+.download {
+  display: inline-block;
+  margin-top: 20px;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+
+
+
+
